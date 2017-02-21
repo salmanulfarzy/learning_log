@@ -14,7 +14,7 @@ def index(request):
 def topics(request):
     """Show all topics"""
     topics = Topic.objects.order_by('date_added')
-    context = {'topics' : topics}
+    context = {'topics': topics}
     return render(request, 'learning_logs/topics.html', context)
 
 
@@ -58,3 +58,21 @@ def new_entry(request, topic_id):
 
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
+
+
+def edit_entry(request, entry_id):
+    """Edit and existing entry."""
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+    if request.method != 'POST':
+        # Initial request, pre fill with the current entry
+        form = EntryForm(instance=entry)
+    else:
+        # POST data submitted, process data
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
+
+    context = {'entry': entry, 'topic': topic, 'form': form}
+    return render(request, 'learning_logs/edit_entry.html', context)
