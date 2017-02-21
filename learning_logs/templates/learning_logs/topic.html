@@ -15,5 +15,6 @@
       <li> There are no entries for this topic yet.</li>
     {% endfor %}
   </ul>
+    <p><a href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a></p>
 
 {% endblock content %}
