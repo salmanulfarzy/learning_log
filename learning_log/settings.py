@@ -1,11 +1,6 @@
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '6rt7!o%=d+04jwhdtqk%@$o@y$%qr5cyz0=b&@yinzftb@^%oo'
@@ -13,7 +8,7 @@ SECRET_KEY = '6rt7!o%=d+04jwhdtqk%@$o@y$%qr5cyz0=b&@yinzftb@^%oo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -105,7 +100,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # My settings
 LOGIN_URL = '/users/login/'
@@ -114,3 +114,23 @@ LOGIN_URL = '/users/login/'
 BOOTSTRAp = {
     'include_jquery': True,
 }
+
+# Heroku settings
+if os.getcwd() == '/app':
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://localhost')
+    }
+
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure().
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X-FORWARDED_PROPTO', 'https')
+
+    # Allow all host header.
+    ALLOWED_HOSTS = ['*']
+
+    # Static asses configuration
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    STATIC_ROOT = os.path.join('BASE_DIR', 'staticfiles')
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
