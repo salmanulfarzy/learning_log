@@ -1,8 +1,7 @@
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.contrib.auth.models import User
 
-@python_2_unicode_compatible
+
 class Topic(models.Model):
     """A topic the user is learning about"""
     text = models.CharField(max_length=200)
@@ -14,7 +13,6 @@ class Topic(models.Model):
         return self.text
 
 
-@python_2_unicode_compatible
 class Entry(models.Model):
     """Something specific learned about a topic"""
     topic = models.ForeignKey(Topic)
