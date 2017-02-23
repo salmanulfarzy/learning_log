@@ -1,0 +1,20 @@
+{%  extends "learning_logs/base.html" %}
+{%  load bootstrap3 %}
+
+{% block header %}
+    <h2>Log in to your account.</h2>
+{% endblock header %}
+
+{% block content %}
+    <p>Use <code><strong>username</strong> : demo</code> and <code><strong>password</strong> : abcd12345</code></p>
+    <form action="{% url 'users:demo' %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button name="submit">Log In</button>
+        {% endbuttons %}
+        {# Specify where to redirect if the user is logged in #}
+        <input type="hidden" name="next" value="{% url 'learning_logs:topics' %}" />
+    </form>
+
+{% endblock content %}

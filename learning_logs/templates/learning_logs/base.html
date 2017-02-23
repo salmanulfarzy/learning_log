@@ -34,6 +34,7 @@
                     <li><a>Hello, {{ user.username }}</a></li>
                     <li><a href="{% url 'users:logout' %}">Logout</a></li>
                 {% else %}
+                    <li><a href="{% url 'users:demo' %}">Demo</a></li>
                     <li><a href="{% url 'users:register' %}">Register</a></li>
                     <li><a href="{% url 'users:login' %}">Log in</a></li>
                 {% endif %}
