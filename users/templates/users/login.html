@@ -6,7 +6,6 @@
 {% endblock header %}
 
 {% block content %}
-
     <form action="{% url 'users:login' %}" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}

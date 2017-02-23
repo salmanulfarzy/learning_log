@@ -10,11 +10,11 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('learning_logs:index'))
 
-
+# todo Extend registration form
 def register(request):
     """Register a new user"""
     if request.method != 'POST':
-        # Display blank re registration form
+        # Display blank registration form
         form = UserCreationForm()
     else:
         # Process completed form

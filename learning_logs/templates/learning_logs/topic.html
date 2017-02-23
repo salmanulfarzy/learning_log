@@ -1,13 +1,15 @@
 {% extends 'learning_logs/base.html' %}
+{% load bootstrap3 %}
 
 {% block header %}
     <h2>{{ topic }}</h2>
-    <p><a href="{% url 'learning_logs:edit_topic' topic.id %}">Edit Topic</a></p>
+    <a class="btn btn-default" href="{% url 'learning_logs:edit_topic' topic.id %}">Edit Topic</a>
 {% endblock %}
 
 {% block content %}
-    <p> Entries </p>
-    <p><a href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a></p>
+
+    <h3> Entries </h3>
+    <a class="btn btn-success" href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a></p>
     <ul>
         {% for entry in entries %}
             <div class="panel panel-default">
@@ -26,7 +28,7 @@
                 </div>
             </div>
         {% empty %}
-            There are no entries for this topic yet
+            There are no entries for this topic yet.
         {% endfor %}
     </ul>
 

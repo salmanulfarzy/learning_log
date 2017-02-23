@@ -14,5 +14,5 @@
             <li> No topics have been added yet.</li>
         {% endfor %}
     </ul>
-    <h3><a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a></h3>
+    <a class="btn btn-success" href="{% url 'learning_logs:new_topic' %}">Add a new topic</a>
 {% endblock content %}
