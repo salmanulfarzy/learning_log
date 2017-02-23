@@ -13,6 +13,9 @@ urlpatterns = [
         # Page for new topic
         url(r'^new_topic/$', views.new_topic, name='new_topic'),
 
+        # Page for edition topic title
+        url(r'^edit_topic/(?P<topic_id>\d+)$', views.edit_topic, name='edit_topic'),
+
         # Detail page for a single topic
         url(r'topics/(?P<topic_id>\d+)/$', views.topic, name='topic'),
 

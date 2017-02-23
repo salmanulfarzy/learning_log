@@ -51,6 +51,27 @@ def new_topic(request):
 
 
 @login_required()
+def edit_topic(request, topic_id):
+    """Edit topic name"""
+    topic = get_object_or_404(Topic, id=topic_id)
+    if topic.owner != request.user:
+        raise Http404
+    if request.method != 'POST':
+        form = TopicForm(instance=topic)
+    else:
+        form = TopicForm(instance=topic, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic_id]))
+
+    context = {'topic': topic, 'form': form}
+    return render(request, 'learning_logs/edit_topic.html', context)
+
+
+# todo delete topic
+
+
+@login_required()
 def new_entry(request, topic_id):
     """Add new entry for a particular topic"""
     topic = Topic.objects.get(id=topic_id)
@@ -68,6 +89,9 @@ def new_entry(request, topic_id):
 
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
+
+
+# todo delete entry
 
 
 @login_required()

@@ -2,6 +2,7 @@
 
 {% block header %}
     <h2>{{ topic }}</h2>
+    <p><a href="{% url 'learning_logs:edit_topic' topic.id %}">Edit Topic</a></p>
 {% endblock %}
 
 {% block content %}
