@@ -14,7 +14,7 @@
             <button name="submit">Log In</button>
         {% endbuttons %}
         {# Specify where to redirect if the user is logged in #}
-        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+        <input type="hidden" name="next" value="{% url 'learning_logs:topics' %}" />
     </form>
 
 {% endblock content %}
