@@ -18,3 +18,11 @@ cd learning_log
 pip install -r requirements.txt
 python manage.py runserver
 ```
+
+### TODO
+
+ - [ ] Markdown support
+ - [ ] Email for user registration
+ - [ ] Abilityt to update password
+ - [ ] User specific topic id's
+ 
