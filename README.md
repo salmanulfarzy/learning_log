@@ -26,4 +26,3 @@ python manage.py runserver
  - [ ] Email for user registration
  - [ ] Abilityt to update password
  - [ ] User specific topic id's
- 
