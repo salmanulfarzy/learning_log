@@ -1,6 +1,6 @@
-# Learning Log
+# Learning Log  [![Heroku](http://heroku-badge.herokuapp.com/?app=sfarzy-learning-log&style=flat)](https://sfarzy-learning-log.herokuapp.com/)
 
-https://sfarzy-learning-log.herokuapp.com/
+https://sfarzy-learning-log.herokuapp.com/  
 
 Django application to take notes while you study them. Each user can add new topics and entries. 
 
