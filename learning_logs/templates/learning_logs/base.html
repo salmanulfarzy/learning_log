@@ -1,5 +1,7 @@
 {# Load the collection of template tags provided by django-bootstrap #}
 {%  load bootstrap3 %}
+{% load static %}
+
 
 <!doctype html>
 <html lang="en">
@@ -11,6 +13,7 @@
 
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static "learning_logs/css/font-awesome.min.css" %}">
 </head>
 <body>
 {# Static navbar #}
@@ -30,6 +33,7 @@
 
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/sfarzy/learning_log.git"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
                 {% if user.is_authenticated %}
                     <li><a>Hello, {{ user.username }}</a></li>
                     <li><a href="{% url 'users:logout' %}">Logout</a></li>

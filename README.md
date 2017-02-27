@@ -16,6 +16,7 @@ Follow the below steps to set it up on a machine. Preferably manage python packa
 git clone https://github.com/sfarzy/learning_log.git
 cd learning_log
 pip install -r requirements.txt
+python manage.py collectstatic --noinput
 python manage.py runserver
 ```
 
