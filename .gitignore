@@ -5,7 +5,11 @@
 __pycache__/
 local_settings.py
 media
-staticfiles
+staticfiles/
+static/
+
+### Database
+db.sqlite3
 
 ###
 .idea/
