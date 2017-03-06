@@ -21,12 +21,13 @@ python manage.py runserver
 
 ### TODO
 
- - [x] Markdown support
- - [ ] Email for user registration
- - [ ] Abilityt to update password
- - [ ] User specific topic id's
+ - <strike>Markdown support</strike>
+ - Email for user registration
+ - Abilityt to update password
+ - User specific topic id's
 
  ### Dependencies
+ 
  - [Django](https://www.djangoproject.com/)
  - [Django-Bootstrap](https://github.com/dyve/django-bootstrap3)
  - [Markdownx](https://github.com/adi-/django-markdownx)
