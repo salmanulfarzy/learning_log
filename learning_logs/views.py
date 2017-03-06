@@ -62,7 +62,8 @@ def edit_topic(request, topic_id):
         form = TopicForm(instance=topic, data=request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic_id]))
+            return HttpResponseRedirect(reverse('learning_logs:topic',
+                                                args=[topic_id]))
 
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_topic.html', context)
@@ -85,7 +86,8 @@ def new_entry(request, topic_id):
             new_entry = form.save(commit=False)
             new_entry.topic = topic
             new_entry.save()
-            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic_id]))
+            return HttpResponseRedirect(reverse('learning_logs:topic',
+                                                args=[topic_id]))
 
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
@@ -109,7 +111,8 @@ def edit_entry(request, entry_id):
         form = EntryForm(instance=entry, data=request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
+            return HttpResponseRedirect(reverse('learning_logs:topic',
+                                                args=[topic.id]))
 
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
