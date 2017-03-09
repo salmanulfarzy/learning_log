@@ -28,6 +28,6 @@ python manage.py runserver
 
 ### Dependencies
  
-- [Django](https://www.djangoproject.com/)
-- [Django-Bootstrap](https://github.com/dyve/django-bootstrap3)
-- [Markdownx](https://github.com/adi-/django-markdownx)
+- [django](https://www.djangoproject.com/)
+- [django-bootstrap](https://github.com/dyve/django-bootstrap3)
+- [django-markdownx](https://github.com/adi-/django-markdownx)
