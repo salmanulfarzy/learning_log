@@ -17,16 +17,8 @@ class Topic(models.Model):
 class Entry(models.Model):
     """Something specific learned about a topic"""
     topic = models.ForeignKey(Topic)
-    text = models.TextField()
     markdown_field = MarkdownxField()
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name_plural = 'entries'
-
-    def __str__(self):
-        """Return a string representation of the model."""
-        if len(self.text) < 50:
-            return self.text
-        else:
-            return self.text[:50] + "..."
