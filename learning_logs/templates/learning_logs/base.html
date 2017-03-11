@@ -1,5 +1,5 @@
 {# Load the collection of template tags provided by django-bootstrap #}
-{%  load bootstrap3 %}
+{% load bootstrap3 %}
 {% load static %}
 {% load staticfiles %}
 
@@ -9,12 +9,30 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
     <title>Learning Log</title>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("ready");
+
+            $('.markdownx').on('markdownx.init', function () {
+                console.log("INIT");
+            });
+
+            $('.markdownx').on('markdownx.update', function (e, response) {
+                console.log("UPDATE" + response);
+            });
+        });
+    </script>
 
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <link rel="stylesheet" href="{% static "learning_logs/css/font-awesome.min.css" %}">
+
+    <link rel="stylesheet"
+          href="{% static "learning_logs/css/font-awesome.min.css" %}">
 </head>
 <body>
 {# Static navbar #}
@@ -26,15 +44,20 @@
                     aria-expanded="false" aria-controls="navbar">
             </button>
             {% if user.is_authenticated %}
-                <a href="{% url 'learning_logs:topics' %}" class="navbar-brand">Topics</a>
+                <a href="{% url 'learning_logs:topics' %}"
+                   class="navbar-brand">Topics</a>
             {% else %}
-                <a href="{% url 'learning_logs:index' %}" class="navbar-brand">Leaning Log </a>
+                <a href="{% url 'learning_logs:index' %}" class="navbar-brand">
+                    Leaning Log
+                </a>
             {% endif %}
         </div>
 
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/sfarzy/learning_log.git"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/sfarzy/learning_log.git"><i
+                        class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                </li>
                 {% if user.is_authenticated %}
                     <li><a>Hello, {{ user.username }}</a></li>
                     <li><a href="{% url 'users:logout' %}">Logout</a></li>
@@ -55,5 +78,6 @@
         {% block content %}{% endblock content %}
     </div>
 </div>
+
 </body>
 </html>
