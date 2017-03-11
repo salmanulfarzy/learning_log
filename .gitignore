@@ -3,17 +3,10 @@
 *.pot
 *.pyc
 __pycache__/
-local_settings.py
-media
-staticfiles
+staticfiles/
 
-###
+### PyCharm
 .idea/
 
-### OSX
-*.DS_Store
-.AppleDouble
-*LSOverride
-
-# Thumbnails
-._*
+### Databse
+db.sqlite3
