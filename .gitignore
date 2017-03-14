@@ -10,3 +10,6 @@ staticfiles/
 
 ### Databse
 db.sqlite3
+
+### Python
+requirements-dev.txt
