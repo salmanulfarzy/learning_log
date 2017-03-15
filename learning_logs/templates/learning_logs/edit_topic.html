@@ -11,6 +11,7 @@
         {% bootstrap_form form %}
         {% buttons %}
             <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'learning_logs:topics' %}" class='btn btn-danger'>Cancel</a>
         {% endbuttons %}
     </form>
 {% endblock %}
