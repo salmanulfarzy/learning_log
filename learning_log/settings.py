@@ -127,7 +127,7 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X-FORWARDED_PROPTO', 'https')
 
     # Allow all host header.
-    ALLOWED_HOSTS = ['sfarzy-learning-log.herokuapp.com']
+    ALLOWED_HOSTS = ['sfarzy-learning-log.herokuapp.com', 'learning-log.salmanulfarzy.com']
     DEBUG = False
 
     # Static asses configuration
