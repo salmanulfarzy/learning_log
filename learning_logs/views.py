@@ -99,7 +99,15 @@ def new_entry(request, topic_id):
 
 
 # todo delete entry
+@login_required()
+def delete_entry(request, entry_id):
+   entry = Entry.objects.get(id=entry_id)
+   if entry.topic.owner != request.user:
+       raise Http404
+   else:
+       entry.delete()
 
+   return render(request, 'learning_logs/topic.html')
 
 @login_required()
 def edit_entry(request, entry_id):
