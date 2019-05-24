@@ -126,8 +126,8 @@ if os.getcwd() == '/app':
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
     SECURE_PROXY_SSL_HEADER = ('HTTP_X-FORWARDED_PROPTO', 'https')
 
-    # Allow all host header.
-    ALLOWED_HOSTS = ['sfarzy-learning-log.herokuapp.com', 'learning-log.salmanulfarzy.com']
+    # Allowed host header.
+    ALLOWED_HOSTS = ['sfarzy-learning-log.herokuapp.com']
     DEBUG = False
 
     # Static asses configuration
