@@ -11,7 +11,7 @@ django-markdownx = "==1.7.2"
 gunicorn = "==19.6.0"
 "psycopg2" = "==2.7.1"
 whitenoise = "==3.3.0"
-Django = "==1.11.20"
+Django = "==1.11.22"
 
 [dev-packages]
 
