@@ -1,8 +1,11 @@
-appdirs==1.4.0
-dj-database-url==0.4.2
-Django==1.10.5
-django-bootstrap3==8.1.0
-django-markdownx==1.7.2
-gunicorn==19.6.0
-psycopg2==2.7.1
-whitenoise==3.3.0
+-i https://pypi.org/simple
+dj-database-url==0.5.0
+django-bootstrap3==11.1.0
+django-markdownx==2.0.28
+django==1.11.22
+gunicorn==19.9.0
+markdown==3.1.1
+pillow==6.1.0
+psycopg2==2.7
+pytz==2019.1
+whitenoise==3.3.1
