@@ -1,11 +1,12 @@
--i https://pypi.org/simple
+-i https://pypi.org/simple/
 dj-database-url==0.5.0
 django-bootstrap3==11.1.0
 django-markdownx==2.0.28
-django==1.11.22
+django==2.2.3
 gunicorn==19.9.0
 markdown==3.1.1
 pillow==6.1.0
 psycopg2==2.7
 pytz==2019.1
+sqlparse==0.3.0
 whitenoise==3.3.1
