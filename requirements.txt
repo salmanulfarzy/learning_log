@@ -5,7 +5,7 @@ django-markdownx==2.0.28
 django==1.11.23
 gunicorn==19.9.0
 markdown==3.1.1
-pillow==6.1.0
+pillow==6.2.0
 psycopg2==2.7
-pytz==2019.2
+pytz==2019.3
 whitenoise==3.3.1
