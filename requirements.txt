@@ -2,10 +2,10 @@
 dj-database-url==0.5.0
 django-bootstrap3==11.1.0
 django-markdownx==2.0.28
-django==1.11.23
+django==1.11.28
 gunicorn==19.9.0
-markdown==3.1.1
-pillow==6.1.0
+markdown==3.2
+pillow==7.0.0
 psycopg2==2.7
-pytz==2019.2
+pytz==2019.3
 whitenoise==3.3.1
