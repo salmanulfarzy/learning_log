@@ -2,10 +2,12 @@
 dj-database-url==0.5.0
 django-bootstrap3==11.1.0
 django-markdownx==2.0.28
-django==1.11.23
+django==1.11.29
 gunicorn==19.9.0
-markdown==3.1.1
-pillow==6.1.0
+importlib-metadata==1.6.0 ; python_version < '3.8'
+markdown==3.2.2
+pillow==7.1.2
 psycopg2==2.7
-pytz==2019.2
+pytz==2020.1
 whitenoise==3.3.1
+zipp==3.1.0
