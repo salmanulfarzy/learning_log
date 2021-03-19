@@ -4,8 +4,11 @@ django-bootstrap3==11.1.0
 django-markdownx==2.0.28
 django==1.11.23
 gunicorn==19.9.0
-markdown==3.1.1
-pillow==6.1.0
+importlib-metadata==3.7.3 ; python_version < '3.8'
+markdown==3.3.4
+pillow==8.1.1
 psycopg2==2.7
-pytz==2019.2
+pytz==2021.1
+typing-extensions==3.7.4.3 ; python_version < '3.8'
 whitenoise==3.3.1
+zipp==3.4.1
